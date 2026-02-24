@@ -27,9 +27,9 @@ let matchKeys = /^[a-zA-Z0-9./\:]$/;
 
 function processInput() {
   if (outputRef.innerHTML === '') {
-    outputRef.innerHTML = inputRaw;
+    outputRef.innerHTML = `>${inputRaw}`;
   } else {
-    outputRef.innerHTML = `${outputRef.innerHTML}<br>${inputRaw}`;
+    outputRef.innerHTML = `${outputRef.innerHTML}<br>>${inputRaw}`;
   }
   inputRaw = inputRaw.trim();
   if (inputRaw === 'clear') {
@@ -56,7 +56,7 @@ let outputStrings = {
   'help': `
     'clear': Clears the console output.<br>
     'go to': Opens typed URL (e.g. https://www.google.com) in a new tab.<br>
-    'resume': Shows <user>'s current resume.
+    'resume': Shows {user}'s current resume.
   `,
   'resume': `
     Caleb Crawford (Slab)<br><br>
